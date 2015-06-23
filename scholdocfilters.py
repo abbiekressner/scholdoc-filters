@@ -1,9 +1,10 @@
-# Author: John MacFarlane <jgm@berkeley.edu>
+# Author: Tim T.Y. Lin <timtylin@gmail.com>
+# Copyright: (C) 2015 Tim T.Y. Lin
 # Copyright: (C) 2013 John MacFarlane
 # License: BSD3
 
 """
-Functions to aid writing python scripts that process the pandoc
+Functions to aid writing python scripts that process the Scholdoc
 AST serialized as JSON.
 """
 
@@ -77,6 +78,8 @@ def stringify(x):
             result.append(val[1])
         elif key == 'Math':
             result.append(val[1])
+        elif key == 'NumRef':
+            result.append(val[1])
         elif key == 'LineBreak':
             result.append(" ")
         elif key == 'Space':
@@ -126,6 +129,10 @@ DefinitionList = elt('DefinitionList', 1)
 Header = elt('Header', 3)
 HorizontalRule = elt('HorizontalRule', 0)
 Table = elt('Table', 5)
+Figure = elt('Figure', 5)
+ImageGrid = elt('ImageGrid', 1)
+Statement = elt('Statement', 2)
+Proof = elt('Proof', 2)
 Div = elt('Div', 2)
 Null = elt('Null', 0)
 
@@ -140,12 +147,13 @@ Subscript = elt('Subscript', 1)
 SmallCaps = elt('SmallCaps', 1)
 Quoted = elt('Quoted', 2)
 Cite = elt('Cite', 2)
+NumRef = elt('NumRef', 2)
 Code = elt('Code', 2)
 Space = elt('Space', 0)
 LineBreak = elt('LineBreak', 0)
 Math = elt('Math', 2)
 RawInline = elt('RawInline', 2)
 Link = elt('Link', 2)
-Image = elt('Image', 2)
+Image = elt('Image', 3)
 Note = elt('Note', 1)
 Span = elt('Span', 2)
