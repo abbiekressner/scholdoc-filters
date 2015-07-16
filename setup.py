@@ -6,7 +6,7 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(name='scholdocfilters',
-      version='0.1',
+      version='0.1.1',
       description='Utilities for writing Scholdoc filters in Python',
       long_description=read('README.rst'),
       author='Tim T.Y. Lin',

@@ -1,5 +1,5 @@
 scholdocfilters
-=============
+===============
 
 A Python module for writing Scholdoc filters, forking off the
 original pandoc filters. Scholdoc filters are pipes that read a JSON
@@ -75,6 +75,10 @@ of its use:::
 
 Examples
 --------
+
+NOTE: These example are written for ``pandocfilters``. As such, some examples
+are not working due to an incompatible AST between Scholdoc and Pandoc. This
+will be remedied ASAP.
 
 The examples subdirectory in the source repository contains the
 following filters. These filters should provide a useful starting

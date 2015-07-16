@@ -1,6 +1,12 @@
-Notes on uploading this package to PyPI
+Notes on uploading this package to PyPI, provided that you have pypi and
+pypitest servers already setup in your ~/.pypirc
 
-python setup.py register
-python setup.py sdist upload
+(only needs doing once)
+python setup.py register -r pypitest
+python setup.py register -r pypi
+
+(for each release)
+python setup.py sdist upload -r pypitest  (for testing)
+python setup.py sdist upload -r pypi      (for live)
 
 In upload step, can also use --sign to sign with GPG.
